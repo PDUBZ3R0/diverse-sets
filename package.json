@@ -1,15 +1,8 @@
 {
   "name": "diverse-sets",
-  "version": "1.0.1",
-  "description": "",
+  "version": "2.0.1",
+  "description": "Special collections for special situations. Three set-like collections with different performance and persistence tradeoffs, plus a randomized array.",
   "exports": "./index.js",
   "type": "module",
-  "license": "MIT",
-  "dependencies": {
-    "@sqlite.org/sqlite-wasm": "^3.50.4-build1",
-    "@types/node": "^22.15.30",
-    "better-sqlite3": "^12.4.1",
-    "typescript": "^5.8.3",
-    "uuid": "^13.0.0"
-  }
+  "license": "MIT"
 }
