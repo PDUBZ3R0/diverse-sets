@@ -1,7 +1,10 @@
 {
   "name": "diverse-sets",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Special collections for special situations. Three set-like collections with different performance and persistence tradeoffs, plus a randomized array.",
+  "engines": {
+    "node": ">= 22"
+  },
   "exports": "./index.js",
   "type": "module",
   "license": "MIT"

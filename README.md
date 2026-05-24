@@ -182,26 +182,28 @@ Workload: seed N exclusions, then push M inputs drawn from a pool of unique keys
 
 **Small** — 1,000 seed exclusions, 10,000 inputs, pool of 3,000:
 
-| Class            | seed | push  | export | total |
-|------------------|-----:|------:|-------:|------:|
-| `ExclusionSet`   |  0.2 |   2.0 |    0.5 |   2.7 |
-| `BinaryTree`     |  1.8 |   5.7 |    0.4 |   7.9 |
-| `ExclusionQuery` |  2.0 |  12.3 |    1.1 |  15.4 |
+Class            | seed(ms) | push(ms) | export(ms) | total(ms) | output
+-----------------|----------|----------|------------|-----------|-------
+BinaryTree       |      1.8 |      4.5 |        0.6 |       6.8 |   1927
+ExclusionSet     |      0.4 |      1.5 |        0.7 |       2.5 |   1927
+ExclusionQuery   |      1.8 |      9.9 |        1.2 |      12.8 |   1927
+
 
 **Medium** — 20,000 seed exclusions, 100,000 inputs, pool of 30,000:
 
-| Class            |  seed |   push | export | total |
-|------------------|------:|-------:|-------:|------:|
-| `ExclusionSet`   |   4.3 |   11.3 |    2.5 |  18.0 |
-| `BinaryTree`     |  15.5 |   58.0 |    5.0 |  78.5 |
-| `ExclusionQuery` |  27.8 |  108.2 |    4.6 | 140.5 |
+Class            | seed(ms) | push(ms) | export(ms) | total(ms) | output
+-----------------|----------|----------|------------|-----------|-------
+BinaryTree       |     13.6 |     44.1 |        1.8 |      59.4 |   9633
+ExclusionSet     |      3.0 |      9.2 |        2.5 |      14.7 |   9633
+ExclusionQuery   |     22.3 |     92.5 |        7.0 |     121.8 |   9633
+
 
 **Large** — 200,000 seed exclusions, 1,000,000 inputs, pool of 300,000:
 
-| Class            |   seed |    push | export |  total |
-|------------------|-------:|--------:|-------:|-------:|
-| `ExclusionSet`   |   42.5 |   147.5 |   35.3 |  225.3 |
-| `ExclusionQuery` |  315.1 |  1437.8 |   79.1 | 1832.0 |
+Class            | seed(ms) | push(ms) | export(ms) | total(ms) | output
+-----------------|----------|----------|------------|-----------|-------
+ExclusionSet     |     35.9 |    256.7 |       34.3 |     326.9 |  96421
+ExclusionQuery   |    257.3 |   1252.8 |       66.3 |    1576.4 |  96421
 
 (`BinaryTree` is omitted at this scale — without self-balancing it degrades on near-uniform input and pulls the comparison out of shape. It remains the right choice when sorted output during traversal is what you actually want.)
 
